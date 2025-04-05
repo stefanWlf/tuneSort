@@ -4,10 +4,16 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [
+      {
+        path: '/',
+        name: 'LandingPage',
+        component: () => import('pages/NewLandingpage.vue'),
+      },
+    ],
   },
 
-  // Always leave this as last one,
+  // Always leave this as last one,s
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',
